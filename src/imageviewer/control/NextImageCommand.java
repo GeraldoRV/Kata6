@@ -1,6 +1,14 @@
 package imageviewer.control;
 
-public class NextImageCommand implements Command{
+import imageviewer.ui.ImageDisplay;
+
+public class NextImageCommand implements Command {
+
+    private final ImageDisplay imageDisplay;
+
+    public NextImageCommand(ImageDisplay imageDisplay) {
+        this.imageDisplay = imageDisplay;
+    }
 
     @Override
     public String name() {
@@ -9,7 +17,7 @@ public class NextImageCommand implements Command{
 
     @Override
     public void execute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        imageDisplay.display(imageDisplay.currentImage().next());
     }
-    
+
 }

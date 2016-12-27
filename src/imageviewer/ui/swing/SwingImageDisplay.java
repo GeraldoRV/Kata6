@@ -43,5 +43,10 @@ public class SwingImageDisplay extends JPanel implements ImageDisplay {
             
         };
     }
+
+    @Override
+    public Image currentImage() {
+        return image;
+    }
     
 }
